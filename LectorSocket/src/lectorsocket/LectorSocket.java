@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 /*** @author Marina
  */
 public class LectorSocket {
-
+//
     public static void main(String[] args) throws IOException {
         
     }
