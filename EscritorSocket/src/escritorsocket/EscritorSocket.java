@@ -54,28 +54,21 @@ public class EscritorSocket {//este es el proceso productor
             try {
                 System.out.println("Productor esperando conexión de consumidor");
                 canal = conexion.accept(); //productor espera que se conecte un consumidor
-
-              
-           //     salidaStream = new PrintWriter(canal.getOutputStream());
-               
-
-//          Abrimos el fichero buffer   
+         //     salidaStream = new PrintWriter(canal.getOutputStream());
+         //     Abrimos el fichero buffer   
                 File fbuffer = new File(fichruta);
                 RandomAccessFile raf = new RandomAccessFile(fbuffer, "rwd");
                 FileChannel channel = raf.getChannel();
                 FileLock lock = channel.lock();
                 System.out.println("Suministrador--> Entro en Región Crítica");
-
-//                  Se sebreescribe el contador, para lo que nos ponemos al principio del fichero
+//              Se sebreescribe el contador, para lo que nos ponemos al principio del fichero
                 raf.seek(0);
                 raf.writeInt(contador);
                 //Finalizacion del bloqueo de escritura en el fichero  
                 lock.release();
-
                 System.out.println("Suministrador--> Nuevo valor del contador escrito (" + contador + ") grabado. Salgo de la R.C.");
-//                    Aumentamos el valor del contador
+//              Aumentamos el valor del contador
                 contador++;
-
                 channel.close();
                 raf.close();
                 canal.close(); //cierro canal, puede elevar IOException
