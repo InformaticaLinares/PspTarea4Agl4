@@ -87,7 +87,7 @@ public class LectorSocket {
             } catch (IOException ex) {
                 System.out.println(ex.toString());
             }
-            canal.close();
+            
         }
 
         try {
