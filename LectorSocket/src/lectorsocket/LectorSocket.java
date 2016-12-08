@@ -74,60 +74,32 @@ public class LectorSocket {
             }
         }
 
-//      Bucle dormir a intervalos regulares a la espera de poder leer el valor del contador
-// El consumidor 
+// El consumidor recoje el stream del 
         while (leido == 0) {
             try {
-//          Abrimos el fichero buffer   
-                File fbuffer = new File(fichruta);
-                RandomAccessFile raf = new RandomAccessFile(fbuffer, "rwd");
-                FileChannel channel = raf.getChannel();
-                
-                System.out.println("Consumidor " + idConsumidor + " --> Entro en Región Crítica");
-//          Se hace una lectura segura del fichero para comprobar si podemos
-//          leer o no el valor del contador
-                if (raf.length() == 0) { // Si el fichero está vacío me pongo a dormir 
-                    //esperando un que se escriba en el fichero
-//                  System.out.println("Consumidor " + idConsumidor + " --> No puedo leer. Buffer vacio. Espero ...");
-                    try {
-//                        Se duerme el proceso un segundo
-                        Thread.sleep(500);
-                    } catch (InterruptedException ex) {
-                        System.out.println(ex.toString());
-                    }
-                } else {      // Si el fichero no está vacío leo el valor del contador
-//                  Se posiciona al principio del fichero
-                    //raf.seek(0);
-                    bfr = new BufferedReader(new InputStreamReader(canal.getInputStream()));
-                    //contador = raf.readInt();
-                    cont = bfr.readLine();
-                    contador = Integer.parseInt(cont);
-                    raf.setLength(0);
-//                    Finalizacion del bloqueo  
-                   
-                    System.out.println("Consumidor " + idConsumidor + " --> Leído un nuevo valor del contador (" + contador + ").");
-//                  Cambiamos el estado del indicador "leido"
-                    leido = 1;
-                    bfr.close();
-                }
-                channel.close();
-                raf.close();
+                bfr = new BufferedReader(new InputStreamReader(canal.getInputStream()));
+                streamDeEntrada = bfr.readLine();
+                contador = Integer.parseInt(streamDeEntrada);
+                System.out.println("Consumidor " + idConsumidor + " --> Lee el valor del contador (" + contador + ").");
+//              Cambiamos el estado del indicador "leido"
+                leido = 1;
+                bfr.close();
             } catch (IOException ex) {
                 System.out.println(ex.toString());
             }
+            canal.close();
         }
-        try { 
-                canal.close();
-            }catch (IOException e){
-                System.err.println ("Error de socket");
-                System.err.print (e.toString());
-            }
-    }
 
+        try {
+            canal.close();
+        } catch (IOException e) {
+            System.err.println("Error de socket");
+            System.err.print(e.toString());
+        }
+    }
     /*
      * Método para validar los argumentos de entrada de main
      */
-
     private static boolean validarArgs(String[] a) {
         if (a.length == 0 || a.length > 1) // Si el número de argumentos no es 1
         {
