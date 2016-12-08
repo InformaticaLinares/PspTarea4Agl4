@@ -83,4 +83,3 @@ public class EscritorSocket {//este es el proceso productor
         }
     }
 }
-}
