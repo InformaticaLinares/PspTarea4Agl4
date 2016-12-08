@@ -20,7 +20,7 @@ public class EscritorSocket {//este es el proceso productor
 
 //Creo el server socket para la conexion de los consumidosres
 //      Fichero para buffer
-        String fichruta = "buffer.txt";
+        
 //      Contador del proceso
         int contador = 0;
         ServerSocket conexion = null; //Socket para aceptar conexiones
