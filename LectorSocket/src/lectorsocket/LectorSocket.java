@@ -26,10 +26,12 @@ public class LectorSocket {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
+        String cont;
         //      Fichero de logging
         String fichlog = "javalogcons.txt";
         //      Se redirigen las salidas estandar
         PrintStream ps = null;
+        BufferedReader bfr;
         try {
             ps = new PrintStream(
                     new BufferedOutputStream(new FileOutputStream(
@@ -40,12 +42,13 @@ public class LectorSocket {
             System.setOut(ps);
             System.setErr(ps);
         }
-
+        ps.flush();
         //      Fichero para buffer
         String fichruta = "buffer.txt";
 //      Indicador de valor de contador leido
         int leido = 0;    // Inicialmente el contador no ha sido leído
-        int contador;// valor que es leido delfichero
+        
+        int contador;// valor que es leido del BufferedReader
         boolean acceso = false;
 //      Validar argumentos de entrada
         if (!validarArgs(args)) {
@@ -94,14 +97,18 @@ public class LectorSocket {
                     }
                 } else {      // Si el fichero no está vacío leo el valor del contador
 //                  Se posiciona al principio del fichero
-                    raf.seek(0);
-                    contador = raf.readInt();
+                    //raf.seek(0);
+                    bfr = new BufferedReader(new InputStreamReader(canal.getInputStream()));
+                    //contador = raf.readInt();
+                    cont = bfr.readLine();
+                    contador = Integer.parseInt(cont);
                     raf.setLength(0);
 //                    Finalizacion del bloqueo  
                    
                     System.out.println("Consumidor " + idConsumidor + " --> Leído un nuevo valor del contador (" + contador + ").");
 //                  Cambiamos el estado del indicador "leido"
                     leido = 1;
+                    bfr.close();
                 }
                 channel.close();
                 raf.close();
