@@ -8,7 +8,6 @@ public class LectorSocket {
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
         String streamDeEntrada;
         //      Fichero de logging
         String fichlog = "javalogcons.txt";
@@ -26,11 +25,8 @@ public class LectorSocket {
             System.setErr(ps);
         }
         ps.flush();
-        //      Fichero para buffer
-        String fichruta = "buffer.txt";
-//      Indicador de valor de contador leido
-        int leido = 0;    // Inicialmente el contador no ha sido leído
-        
+//      Indicador de valor de contador leido (mientras que no se lea en el puerto será 0)
+        int leido = 0;   
         int contador;// valor que es leido del BufferedReader
         boolean acceso = false;
 //      Validar argumentos de entrada
@@ -39,16 +35,15 @@ public class LectorSocket {
             ayuda();
             System.exit(1);
         }
-        //      Identificador del proceso
+//      Identificador del proceso que recoge el argumento del lanzador
         int idConsumidor = Integer.parseInt(args[0]);
-
-//El consumidor intenta conectar con el canal
+//      El consumidor intenta conectar con el canal
         Socket canal = null; //Socket para el canal de conexión con el escritor
-        
-        while (!acceso) {//mientras que no haya acceso intenta la conexión de nuevo
+        while (leido == 0) {
+            if (!acceso) {//mientras que no haya acceso intenta la conexión de nuevo
             try {
-                //Pido conexión al equipo a través del puerto 12500, donde escucha el escritor
-                canal = new Socket("localhost", 12500);
+                //Pido conexión al equipo a través del puerto 12502, donde escucha el escritor
+                canal = new Socket("localhost", 12502);
                 acceso = true;
             } catch (Exception e) {
                 System.err.println("Error. El consumidor " + idConsumidor + " no ha podido establecer la conexión. Se intenta de nuevo ");
@@ -56,12 +51,8 @@ public class LectorSocket {
                 System.err.print(e.toString());
             }
         }
-
-// El consumidor recoje el stream del 
-        while (leido == 0) {
             try {
                 bfr = new BufferedReader(new InputStreamReader(canal.getInputStream()));
-                canal.wait(500);
                 streamDeEntrada = bfr.readLine();
                 contador = Integer.parseInt(streamDeEntrada);
                 System.out.println("Consumidor " + idConsumidor + " --> Lee el valor del contador (" + contador + ").");
@@ -70,10 +61,10 @@ public class LectorSocket {
                 bfr.close();
             } catch (IOException ex) {
                 System.out.println(ex.toString());
+                leido=0;
+                acceso=false;
             }
-            
         }
-
         try {
             canal.close();
         } catch (IOException e) {
@@ -81,9 +72,7 @@ public class LectorSocket {
             System.err.print(e.toString());
         }
     }
-    /*
-     * Método para validar los argumentos de entrada de main
-     */
+  
     private static boolean validarArgs(String[] a) {
         if (a.length == 0 || a.length > 1) // Si el número de argumentos no es 1
         {

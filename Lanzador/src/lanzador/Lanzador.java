@@ -10,10 +10,10 @@ public class Lanzador {
 
         try {
 //          Ejecuta el Productor una vez
-            Runtime.getRuntime().exec("java -jar Productor.jar");
+            Runtime.getRuntime().exec("java -jar EscritorSocket.jar");
             for (int i = 0; i < 100; i++) {
 //          Ejecuta el Consumidor 100 veces con un identificador numerico como argumento 0
-                Runtime.getRuntime().exec("java -jar Consumidor.jar " + i);
+                Runtime.getRuntime().exec("java -jar LectorSocket.jar " + i);
             }
         } catch (IOException e) {
             System.err.println("Error. " + e.toString());
