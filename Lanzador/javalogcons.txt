@@ -1,0 +1,128 @@
+Consumidor 0 --> Lee el valor del contador (0).
+Consumidor 1 --> Lee el valor del contador (1).
+Consumidor 5 --> Lee el valor del contador (2).
+Consumidor 4 --> Lee el valor del contador (3).
+Consumidor 3 --> Lee el valor del contador (4).
+Consumidor 2 --> Lee el valor del contador (5).
+Consumidor 9 --> Lee el valor del contador (6).
+Consumidor 15 --> Lee el valor del contador (7).
+Consumidor 18 --> Lee el valor del contador (8).
+Consumidor 7 --> Lee el valor del contador (9).
+Consumidor 25 --> Lee el valor del contador (10).
+Consumidor 11 --> Lee el valor del contador (11).
+Consumidor 14 --> Lee el valor del contador (12).
+Consumidor 23 --> Lee el valor del contador (13).
+Consumidor 10 --> Lee el valor del contador (14).
+Consumidor 6 --> Lee el valor del contador (15).
+Consumidor 8 --> Lee el valor del contador (16).
+Consumidor 21 --> Lee el valor del contador (17).
+Consumidor 37 --> Lee el valor del contador (18).
+Consumidor 47 --> Lee el valor del contador (19).
+Consumidor 43 --> Lee el valor del contador (20).
+Consumidor 12 --> Lee el valor del contador (21).
+Consumidor 35 --> Lee el valor del contador (22).
+java.net.SocketException: Connection reset
+Consumidor 26 --> Lee el valor del contador (23).
+Consumidor 16 --> Lee el valor del contador (24).
+Consumidor 22 --> Lee el valor del contador (25).
+java.net.SocketException: Connection reset
+Consumidor 31 --> Lee el valor del contador (26).
+Consumidor 54 --> Lee el valor del contador (27).
+Consumidor 24 --> Lee el valor del contador (28).
+java.net.SocketException: Connection reset
+Consumidor 17 --> Lee el valor del contador (29).
+java.net.SocketException: Connection reset
+Consumidor 41 --> Lee el valor del contador (30).
+Consumidor 13 --> Lee el valor del contador (31).
+Consumidor 38 --> Lee el valor del contador (32).
+Consumidor 34 --> Lee el valor del contador (33).
+java.net.SocketException: Connection reset
+Consumidor 56 --> Lee el valor del contador (34).
+Consumidor 19 --> Lee el valor del contador (35).
+java.net.SocketException: Connection reset
+Consumidor 30 --> Lee el valor del contador (36).
+Consumidor 29 --> Lee el valor del contador (37).
+Consumidor 40 --> Lee el valor del contador (38).
+java.net.SocketException: Connection reset
+Consumidor 33 --> Lee el valor del contador (39).
+Consumidor 27 --> Lee el valor del contador (40).
+Consumidor 49 --> Lee el valor del contador (41).
+Consumidor 44 --> Lee el valor del contador (42).
+Consumidor 32 --> Lee el valor del contador (43).
+Consumidor 28 --> Lee el valor del contador (44).
+Consumidor 42 --> Lee el valor del contador (45).
+java.net.SocketException: Connection reset
+Consumidor 46 --> Lee el valor del contador (46).
+Consumidor 62 --> Lee el valor del contador (47).
+Consumidor 36 --> Lee el valor del contador (48).
+Consumidor 59 --> Lee el valor del contador (49).
+Consumidor 39 --> Lee el valor del contador (50).java.net.SocketException: Connection reset
+
+Consumidor 52 --> Lee el valor del contador (51).
+java.net.SocketException: Connection reset
+Consumidor 58 --> Lee el valor del contador (52).
+Consumidor 67 --> Lee el valor del contador (53).
+Consumidor 60 --> Lee el valor del contador (54).
+Consumidor 71 --> Lee el valor del contador (55).
+Consumidor 61 --> Lee el valor del contador (56).
+Consumidor 66 --> Lee el valor del contador (57).
+java.net.SocketException: Connection reset
+Consumidor 45 --> Lee el valor del contador (58).
+Consumidor 55 --> Lee el valor del contador (60).Consumidor 57 --> Lee el valor del contador (59).
+
+java.net.SocketException: Connection resetjava.net.SocketException: Connection resetConsumidor 50 --> Lee el valor del contador (61).
+
+
+Consumidor 69 --> Lee el valor del contador (62).
+java.net.SocketException: Connection reset
+Consumidor 48 --> Lee el valor del contador (63).
+java.net.SocketException: Connection reset
+Consumidor 53 --> Lee el valor del contador (64).
+Consumidor 63 --> Lee el valor del contador (65).
+Consumidor 80 --> Lee el valor del contador (66).
+Consumidor 64 --> Lee el valor del contador (67).
+Consumidor 86 --> Lee el valor del contador (68).
+Consumidor 98 --> Lee el valor del contador (69).
+Consumidor 51 --> Lee el valor del contador (70).
+java.net.SocketException: Connection resetjava.net.SocketException: Connection resetConsumidor 68 --> Lee el valor del contador (71).java.net.SocketException: Connection resetConsumidor 90 --> Lee el valor del contador (72).
+
+
+
+
+Consumidor 78 --> Lee el valor del contador (73).
+java.net.SocketException: Connection reset
+java.net.SocketException: Connection reset
+Consumidor 65 --> Lee el valor del contador (74).
+java.net.SocketException: Connection reset
+Consumidor 73 --> Lee el valor del contador (75).
+Consumidor 91 --> Lee el valor del contador (76).
+java.net.SocketException: Connection resetjava.net.SocketException: Connection reset
+
+Consumidor 75 --> Lee el valor del contador (77).
+java.net.SocketException: Connection reset
+Consumidor 74 --> Lee el valor del contador (78).
+Consumidor 83 --> Lee el valor del contador (79).
+Consumidor 96 --> Lee el valor del contador (80).
+java.net.SocketException: Connection reset
+Consumidor 92 --> Lee el valor del contador (81).Consumidor 77 --> Lee el valor del contador (82).Consumidor 81 --> Lee el valor del contador (83).
+
+
+java.net.SocketException: Connection resetConsumidor 82 --> Lee el valor del contador (84).
+Consumidor 88 --> Lee el valor del contador (86).Consumidor 93 --> Lee el valor del contador (85).Consumidor 20 --> Lee el valor del contador (87).
+
+
+Consumidor 72 --> Lee el valor del contador (88).
+
+Consumidor 95 --> Lee el valor del contador (89).
+Consumidor 89 --> Lee el valor del contador (90).Consumidor 79 --> Lee el valor del contador (91).
+
+Consumidor 87 --> Lee el valor del contador (92).Consumidor 85 --> Lee el valor del contador (93).java.net.SocketException: Connection reset
+
+
+Consumidor 84 --> Lee el valor del contador (94).
+Consumidor 99 --> Lee el valor del contador (95).
+Consumidor 76 --> Lee el valor del contador (96).
+Consumidor 70 --> Lee el valor del contador (97).
+Consumidor 94 --> Lee el valor del contador (98).
+java.net.SocketException: Connection reset
+Consumidor 97 --> Lee el valor del contador (99).
