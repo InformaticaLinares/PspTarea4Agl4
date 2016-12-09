@@ -1,32 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lectorsocket;
 
 import java.io.*;
 import java.net.*;
-import java.nio.channels.FileChannel;
-import java.nio.channels.FileLock;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.io.*;
-import java.nio.channels.FileChannel;
-import java.nio.channels.FileLock;
 
-/**
- * * @author
- */
 public class LectorSocket {
-//
+
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        String cont;
+        String streamDeEntrada;
         //      Fichero de logging
         String fichlog = "javalogcons.txt";
         //      Se redirigen las salidas estandar
@@ -78,6 +61,7 @@ public class LectorSocket {
         while (leido == 0) {
             try {
                 bfr = new BufferedReader(new InputStreamReader(canal.getInputStream()));
+                canal.wait(500);
                 streamDeEntrada = bfr.readLine();
                 contador = Integer.parseInt(streamDeEntrada);
                 System.out.println("Consumidor " + idConsumidor + " --> Lee el valor del contador (" + contador + ").");
